@@ -1,6 +1,7 @@
 const add = require('./add')
 const read = require('./read')
-const write = require('./write')
+const del = require('./del')
+const present = require('./present')
 
 // get user input
 const cmd = process.argv
@@ -21,9 +22,18 @@ if(cmd[2] == 'add') {
 }
 
 if(cmd[2] == 'read') {
-    // Import present
-    const present = require('./present')
-    
     present(read())
+}
+
+if(cmd[2] == 'delete') {
+    // Get old note values
+    const oldNote = read()
+    // Get ID to delete from notes
+    const id = cmd[3]
+
+    del(id, oldNote)
+
+    present(read())
+
 }
 

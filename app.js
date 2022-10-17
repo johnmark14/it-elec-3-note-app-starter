@@ -1,7 +1,8 @@
 const add = require('./add')
 const read = require('./read')
 const write = require('./write')
-
+const update = require('./update')
+const present = require('./present')
 // get user input
 const cmd = process.argv
 
@@ -21,9 +22,19 @@ if(cmd[2] == 'add') {
 }
 
 if(cmd[2] == 'read') {
-    // Import present
-    const present = require('./present')
-    
     present(read())
 }
 
+if(cmd[2] == 'update') {
+    const note = {
+        id: cmd[3],
+        title: cmd[4],
+        body: cmd[5] 
+    }
+
+    const oldNote = read()
+
+    update(note, oldNote)
+
+    present(read())
+}

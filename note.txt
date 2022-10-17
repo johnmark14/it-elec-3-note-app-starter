@@ -1,1 +1,1 @@
-[{"id":"01","title":"updating this","body":"body update"},{"id":"02","title":"assignment","body":"Please don't forget to work on assignment for web dev class"}]
+[{"id":"01","title":"updating this","body":"body update"}]
